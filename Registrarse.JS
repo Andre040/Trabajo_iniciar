@@ -8,6 +8,9 @@ function Alert() {
     var G = document.getElementById('correo').value;
     var C = document.getElementById('clave').value;
     var A = document.getElementById('confirmar').checked;
+    var ID = document.getElementById('Id').value;
+    var D = document.getElementById('DC').value;
+    var CC = document.getElementById('clave2').value;
     if (N.length == 0) {
         Swal.fire({
             icon: 'error',
@@ -36,29 +39,62 @@ function Alert() {
                 text: 'Porfavor llene la contraseña',
                 footer: '<a href>¿Olvidaste tu contraseña?</a>'
             })
+        } else
+        if (C.length < 7) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'La clave debe tener al menos 7 caracteres',
+            })
+        } else
+        if (C !== CC) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'La contraseña no coincide',
+                footer: '<a href>¿Olvidaste tu contraseña?</a>'
+            })
         } else {
-            if (C.length < 7) {
+            if (D.length == 0) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'La clave debe tener al menos 8 caracteres',
+                    text: 'Porfavor seleccione el tipo de documento',
                 })
             } else {
-                if (A == false) {
+                if (ID.length == 0) {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Acepte los términos y condiciones'
+                        text: 'Porfavor llene el documento'
                     })
-                } else {
-                    Swal.fire({
-                        icon: 'success',
-                        title: '¡Bienvenido!',
-                        text: 'Iniciaste sesión correctamente',
-                        confirmButtonText: '<a href="Pagina.html">Aceptar</a>'
-                    })
+                    } else {
+                        if (A == false) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Acepte los términos y condiciones'
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '¡Bienvenido!',
+                                text: 'Iniciaste sesión correctamente',
+                                confirmButtonText: '<a href="file:///C:/Users/AMBIENTE%20314/Desktop/Trabajo_iniciar/inicar.html">Aceptar</a>'
+                            })
+                            
+                        }
+                    }
                 }
             }
         }
     }
+
+
+function mensaje() {
+    document.getElementById('mensajeclave').style.display = 'block';
+}
+
+function ocultar() {
+    document.getElementById('mensajeclave').style.display = 'none';
 }

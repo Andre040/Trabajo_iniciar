@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Users/AMBIENTE%20314/Desktop/Nose/inicar.html",
+            "url": "file:///C:/Users/AMBIENTE%20314/Desktop/Trabajo_iniciar/inicar.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
